@@ -1089,6 +1089,7 @@ GameObject:
   - component: {fileID: 4023556088902795822}
   - component: {fileID: 6268938184890855241}
   - component: {fileID: 2573780929786927592}
+  - component: {fileID: 3961744451292390397}
   m_Layer: 0
   m_Name: Chunk 6
   m_TagString: Untagged
@@ -1233,6 +1234,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3961744451292390397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023556088902795819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4231ef2970f88a24ebe05b9d8e52c8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4023556089031387675
 GameObject:
   m_ObjectHideFlags: 0

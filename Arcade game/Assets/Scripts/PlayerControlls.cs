@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerControlls : MonoBehaviour
 {
     private Rigidbody2D playerRb;
-    public bool isOnGround;
+    public bool isOnGround = true;
+    public bool gameOver = false;
     public float jumpForce;
     public float highGravity;
     public float lowGravity;
@@ -19,9 +20,10 @@ public class PlayerControlls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && isOnGround == true)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true)
         {
-            //playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            //Alternativ jump
+            //playerRb.AddForce(Vector2.up * Time.deltaTime * jumpForce, ForceMode2D.Impulse);
             playerRb.velocity = Vector2.up * jumpForce;
             isOnGround = false;
         }
@@ -48,8 +50,19 @@ public class PlayerControlls : MonoBehaviour
         }
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isOnGround = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            gameOver = true;
+            Destroy(gameObject);
+            Debug.Log("Game Over");
+        }
     }
 }

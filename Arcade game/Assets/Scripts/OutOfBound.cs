@@ -17,15 +17,17 @@ public class OutOfBound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Platforms are destroyed after they leave the screen
         if (transform.position.x < -150)
         {
             Destroy(gameObject);
         }
 
+        //Player can't leave the screen upwards and ends the game if they go downwards
         if (transform.position.y < -20)
         {
+            playerControllsScript.gameOver = true;
             Destroy(gameObject);
-            playerControllsScript.gameOver = false;
             Debug.Log("Game Over!");
         }
         else if (transform.position.y > 10)

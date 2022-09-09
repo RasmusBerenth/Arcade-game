@@ -18,8 +18,9 @@ public class PlayerControlls : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        //Jump when you press the space bar
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true)
         {
             //Alternativ jump
@@ -58,6 +59,7 @@ public class PlayerControlls : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //If player collides with an "enemy" the game is over
         if (collision.CompareTag("Enemy"))
         {
             gameOver = true;

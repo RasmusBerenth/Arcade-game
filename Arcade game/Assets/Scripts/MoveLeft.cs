@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
     PlayerControlls playerControllsScript;
-    private float speed = 25.0f;
+    private float speed = 20.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -14,8 +14,9 @@ public class MoveLeft : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        //Move game objects to the left until the game is over
         if (playerControllsScript.gameOver == false)
         {
             transform.Translate(Vector2.left * Time.deltaTime * speed);

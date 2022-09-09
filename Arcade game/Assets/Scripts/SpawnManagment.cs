@@ -22,6 +22,7 @@ public class SpawnManagment : MonoBehaviour
 
     void SpawnChunks()
     {
+        //Where the chunks will spawn and which one will spawn.
         int randomChunk = Random.Range(0, environmentChunks.Length);
         Vector2 spawnPosition = new Vector2(70, -11);
 
@@ -30,6 +31,8 @@ public class SpawnManagment : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Spawn new chunk when hitting the spawner
+
         if (collision.CompareTag("Respawn"))
         {
             Debug.Log("Triggerd");

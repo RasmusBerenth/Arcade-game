@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4447792982808633491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.42718, y: -0.1175, z: 0}
+  m_LocalPosition: {x: 1.42718, y: -0.12, z: 0}
   m_LocalScale: {x: 0.5850945, y: 1.1198391, z: 1}
   m_Children: []
   m_Father: {fileID: 4447792984528362182}
@@ -97,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0035910457, y: 0.11201}
+  m_Offset: {x: 0.027301356, y: 0.056667328}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -108,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9928179, y: 0.77598}
+  m_Size: {x: 1.0402383, y: 1.1356993}
   m_EdgeRadius: 0
 --- !u!50 &463801039522108421
 Rigidbody2D:
@@ -141,9 +141,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4447792983302939800}
   - component: {fileID: 4447792983302939807}
+  - component: {fileID: 392627200767250395}
   m_Layer: 0
   m_Name: Lost soul (1)
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,8 +157,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4447792983302939801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.807, y: 1.913, z: 0}
-  m_LocalScale: {x: 0.10492383, y: 0.8362372, z: 1}
+  m_LocalPosition: {x: 2.804, y: 1.4205014, z: 0}
+  m_LocalScale: {x: 0.10492383, y: 0.62140787, z: 1}
   m_Children: []
   m_Father: {fileID: 4447792984528362182}
   m_RootOrder: 4
@@ -213,6 +214,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &392627200767250395
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447792983302939801}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000009536743, y: 0.000015258789}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &4447792983475997536
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4447792983475997536}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.78166, y: -0.1751, z: 0}
+  m_LocalPosition: {x: 2.78166, y: -0.12, z: 0}
   m_LocalScale: {x: 0.52006763, y: 1.1994536, z: 1}
   m_Children: []
   m_Father: {fileID: 4447792984528362182}
@@ -310,7 +327,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0005841553, y: 0.19350684}
+  m_Offset: {x: 0.027259097, y: 0.08371186}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -321,7 +338,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9988317, y: 0.6129863}
+  m_Size: {x: 1.0521818, y: 1.0650836}
   m_EdgeRadius: 0
 --- !u!50 &6349707390822220362
 Rigidbody2D:
@@ -354,9 +371,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4447792983623852721}
   - component: {fileID: 4447792983623852720}
+  - component: {fileID: 64998868341446819}
   m_Layer: 0
   m_Name: Lost soul (2)
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,7 +387,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4447792983623852722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.087, y: 2.0266, z: 0}
+  m_LocalPosition: {x: 4.084, y: 1.6415012, z: 0}
   m_LocalScale: {x: 0.10492383, y: 0.6726202, z: 1}
   m_Children: []
   m_Father: {fileID: 4447792984528362182}
@@ -426,6 +444,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &64998868341446819
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447792983623852722}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000019073486, y: 0.000015258789}
+  serializedVersion: 2
+  m_Radius: 0.50000006
 --- !u!1 &4447792984023611026
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4447792984023611026}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.26925, y: -0.2134, z: 0}
+  m_LocalPosition: {x: 4.26925, y: -0.12, z: 0}
   m_LocalScale: {x: 0.73251, y: 1.1675825, z: 1}
   m_Children: []
   m_Father: {fileID: 4447792984528362182}
@@ -523,7 +557,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0006044656, y: 0.15010011}
+  m_Offset: {x: 0.019543141, y: 0.0704819}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -534,7 +568,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9987911, y: 0.6997998}
+  m_Size: {x: 1.0366685, y: 1.1244326}
   m_EdgeRadius: 0
 --- !u!50 &3004608591455921815
 Rigidbody2D:
@@ -567,9 +601,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4447792984241556945}
   - component: {fileID: 4447792984241556944}
+  - component: {fileID: 6107236529429128156}
   m_Layer: 0
   m_Name: Lost soul
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -582,8 +617,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4447792984241556946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.433, y: 1.8398, z: 0}
-  m_LocalScale: {x: 0.10492383, y: 0.879269, z: 1}
+  m_LocalPosition: {x: 1.43, y: 1.36, z: 0}
+  m_LocalScale: {x: 0.10492383, y: 0.6898745, z: 1}
   m_Children: []
   m_Father: {fileID: 4447792984528362182}
   m_RootOrder: 3
@@ -639,6 +674,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &6107236529429128156
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447792984241556946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000071525574, y: 0.0000076293945}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &4447792984528362176
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,7 +808,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0008882284, y: 0.04807192}
+  m_Offset: {x: 0.0010941029, y: 0.07905823}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -768,7 +819,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.99822354, y: 0.8840338}
+  m_Size: {x: 1.0482581, y: 1.1319243}
   m_EdgeRadius: 0
 --- !u!50 &2281365181630375549
 Rigidbody2D:

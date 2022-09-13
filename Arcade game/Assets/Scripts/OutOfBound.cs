@@ -7,6 +7,10 @@ public class OutOfBound : MonoBehaviour
     Rigidbody2D rb;
     PlayerControlls playerControllsScript;
 
+    private float lowerBorder = -20;
+    private float upperBorder = 10;
+    private float leftBorder = -150;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,19 +22,19 @@ public class OutOfBound : MonoBehaviour
     void Update()
     {
         //Platforms are destroyed after they leave the screen
-        if (transform.position.x < -150)
+        if (transform.position.x < leftBorder)
         {
             Destroy(gameObject);
         }
 
         //Player can't leave the screen upwards and ends the game if they go downwards
-        if (transform.position.y < -20)
+        if (transform.position.y < lowerBorder)
         {
             playerControllsScript.gameOver = true;
             Destroy(gameObject);
             Debug.Log("Game Over!");
         }
-        else if (transform.position.y > 10)
+        else if (transform.position.y > upperBorder)
         {
             rb.AddForce(Vector2.down * 10);
         }

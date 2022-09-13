@@ -5,57 +5,58 @@ using UnityEngine;
 public class PlayerControlls : MonoBehaviour
 {
     private Rigidbody2D playerRb;
-    public bool isOnGround = true;
+    private IsOnGround isOnGroundScript;
+
     public bool gameOver = false;
+
     public float jumpForce;
     public float highGravity;
     public float lowGravity;
+    public float jumpGravity = 5;
+    public float regularGravity = 10;
+    private float score = 0;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        isOnGroundScript = GameObject.Find("PlayerFeats").GetComponent<IsOnGround>();
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         //Jump when you press the space bar
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true)
+        if (Input.GetKey(KeyCode.Space) && isOnGroundScript.isOnGround == true)
         {
-            //Alternativ jump
-            //playerRb.AddForce(Vector2.up * Time.deltaTime * jumpForce, ForceMode2D.Impulse);
             playerRb.velocity = Vector2.up * jumpForce;
-            isOnGround = false;
+            playerRb.gravityScale = jumpGravity;
+            isOnGroundScript.isOnGround = false;
         }
 
-        // Going down faster than up during a jump
-        //if (!Input.GetKey(KeyCode.Space) && isOnGround == false)
-        //{
-        //    playerRb.velocity = Vector2.down * jumpForce * 2;
-        //}
 
         //Lower gravity when holding the up key in order to make the player glide
-        if (Input.GetKey(KeyCode.UpArrow) && isOnGround == false)
+        if (Input.GetKey(KeyCode.UpArrow) && isOnGroundScript.isOnGround == false)
         {
             playerRb.gravityScale = lowGravity;
         }
         //Raise the gravity in order to make the player fall faster
-        else if (Input.GetKey(KeyCode.DownArrow) && isOnGround == false)
+        else if (Input.GetKey(KeyCode.DownArrow) && isOnGroundScript.isOnGround == false)
         {
             playerRb.gravityScale = highGravity;
         }
         else
         {
-            playerRb.gravityScale = 5;
+            playerRb.gravityScale = regularGravity;
         }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        isOnGround = true;
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    isOnGround = true;
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -65,6 +66,20 @@ public class PlayerControlls : MonoBehaviour
             gameOver = true;
             Destroy(gameObject);
             Debug.Log("Game Over");
+        }
+
+        if (collision.CompareTag("Collectable"))
+        {
+            score += 1;
+            Debug.Log($"Score: {score}");
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.CompareTag("Bonus"))
+        {
+            score *= 2;
+            Debug.Log($"Score: {score}");
+            Destroy(collision.gameObject);
         }
     }
 }

@@ -24,7 +24,7 @@ public class SpawnManagment : MonoBehaviour
     {
         //Where the chunks will spawn and which one will spawn.
         int randomChunk = Random.Range(0, environmentChunks.Length);
-        Vector2 spawnPosition = new Vector2(70, -11);
+        Vector2 spawnPosition = new Vector2(70, -12);
 
         Instantiate(environmentChunks[randomChunk], spawnPosition, environmentChunks[randomChunk].transform.rotation);
     }

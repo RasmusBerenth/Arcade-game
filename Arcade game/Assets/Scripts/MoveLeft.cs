@@ -14,7 +14,7 @@ public class MoveLeft : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
         //Move game objects to the left until the game is over
         if (playerControllsScript.gameOver == false)

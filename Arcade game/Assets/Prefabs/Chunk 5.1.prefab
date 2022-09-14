@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188568889983241101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5427, y: 2.029997, z: 0}
+  m_LocalPosition: {x: 0.5427, y: -3.46, z: 0}
   m_LocalScale: {x: 0.035733733, y: 2.830321, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
@@ -119,9 +119,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852947019539742}
   - component: {fileID: 5157852947019539737}
+  - component: {fileID: 8891023861482298546}
   m_Layer: 0
   m_Name: Evil soul (7)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,6 +192,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &8891023861482298546
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852947019539743}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &5157852947236436296
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +228,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852947236436299}
   - component: {fileID: 5157852947236436298}
+  - component: {fileID: 2567212076078437014}
+  - component: {fileID: 3194836361686211755}
   m_Layer: 0
   m_Name: Obstacle S
   m_TagString: Untagged
@@ -216,11 +245,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852947236436296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.304054, y: 2.8585, z: 0}
-  m_LocalScale: {x: 0.031197831, y: 4.413081, z: 1}
+  m_LocalPosition: {x: -0.241177, y: 2.6937, z: 0}
+  m_LocalScale: {x: 0.038843296, y: 4.083424, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5157852947236436298
 SpriteRenderer:
@@ -273,6 +302,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2567212076078437014
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852947236436296}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &3194836361686211755
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852947236436296}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.05301702, y: 0.011180401}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.106034, y: 1.0223608}
+  m_EdgeRadius: 0
 --- !u!1 &5157852947335108321
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +359,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852947335108320}
   - component: {fileID: 5157852947335108323}
+  - component: {fileID: 4168784949260699282}
+  - component: {fileID: 4472284014784074121}
   m_Layer: 0
   m_Name: Obstacle B
   m_TagString: Untagged
@@ -298,11 +376,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852947335108321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.144372, y: 8.297802, z: 0}
-  m_LocalScale: {x: 0.5762983, y: 1.530143, z: 1}
+  m_LocalPosition: {x: 0.144372, y: 7.0377994, z: 0}
+  m_LocalScale: {x: 0.5762983, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5157852947335108323
 SpriteRenderer:
@@ -355,6 +433,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &4168784949260699282
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852947335108321}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &4472284014784074121
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852947335108321}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0039308667, y: 0.038044095}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0078617, y: 1.076088}
+  m_EdgeRadius: 0
 --- !u!1 &5157852947646015572
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,9 +490,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852947646015575}
   - component: {fileID: 5157852947646015574}
+  - component: {fileID: 1118144840292214314}
   m_Layer: 0
   m_Name: Evil soul (8)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -380,7 +506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852947646015572}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.181, y: 7.08, z: 0}
+  m_LocalPosition: {x: 0.181, y: 6.09, z: 0}
   m_LocalScale: {x: 0.02224513, y: 1.6655864, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
@@ -437,6 +563,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1118144840292214314
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852947646015572}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &5157852947786167924
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,9 +599,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852947786167927}
   - component: {fileID: 5157852947786167926}
+  - component: {fileID: 4996529873069970827}
   m_Layer: 0
   m_Name: Evil soul (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,8 +615,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852947786167924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0481, y: 9.8, z: 0}
-  m_LocalScale: {x: 0.02224513, y: 1.6655864, z: 1}
+  m_LocalPosition: {x: 0.047499973, y: 7.9100986, z: 0}
+  m_LocalScale: {x: 0.02224513, y: 1.2505223, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
   m_RootOrder: 4
@@ -519,6 +672,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &4996529873069970827
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852947786167924}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &5157852947788689103
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,9 +708,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852947788689102}
   - component: {fileID: 5157852947788689097}
+  - component: {fileID: 1709680104867988814}
   m_Layer: 0
   m_Name: Evil soul (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -544,8 +724,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852947788689103}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2572, y: 9.7, z: 0}
-  m_LocalScale: {x: 0.02224513, y: 1.6655864, z: 1}
+  m_LocalPosition: {x: 0.25659996, y: 7.8349986, z: 0}
+  m_LocalScale: {x: 0.02224513, y: 1.2505223, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
   m_RootOrder: 6
@@ -601,6 +781,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1709680104867988814
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852947788689103}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &5157852947844877191
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,11 +832,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852947844877191}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.143, y: 7.58, z: 0}
-  m_LocalScale: {x: 0.59513885, y: 14.374967, z: 1}
+  m_LocalPosition: {x: 0.143, y: 6.097, z: 0}
+  m_LocalScale: {x: 0.59513885, y: 11.40941, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5157852947844877185
 SpriteRenderer:
@@ -694,6 +900,8 @@ GameObject:
   - component: {fileID: 5157852947964507866}
   - component: {fileID: 5157852947964507867}
   - component: {fileID: 5157852947964507813}
+  - component: {fileID: 6782090666066054555}
+  - component: {fileID: 1237448565313603255}
   m_Layer: 0
   m_Name: Chunk 5.1
   m_TagString: Untagged
@@ -710,12 +918,12 @@ Transform:
   m_GameObject: {fileID: 5157852947964507864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 80.8, y: 97.9, z: 0}
-  m_LocalScale: {x: 70.20018, y: 1.0656288, z: 1}
+  m_LocalScale: {x: 70.20018, y: 1.9, z: 1}
   m_Children:
-  - {fileID: 5157852948842973816}
   - {fileID: 5157852947236436299}
   - {fileID: 5157852947844877190}
   - {fileID: 5157852947335108320}
+  - {fileID: 5157852948842973816}
   - {fileID: 5157852947786167927}
   - {fileID: 5157852948980336592}
   - {fileID: 5157852947788689102}
@@ -797,6 +1005,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9621de11d166d47ae2246da99a920d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &6782090666066054555
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852947964507864}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0038321465, y: 0.08259487}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0076642, y: 1.1651895}
+  m_EdgeRadius: 0
+--- !u!50 &1237448565313603255
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852947964507864}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &5157852948069233184
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,9 +1062,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948069233187}
   - component: {fileID: 5157852948069233186}
+  - component: {fileID: 2145010175491623334}
   m_Layer: 0
   m_Name: Lost soul (3)
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -822,8 +1078,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852948069233184}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0041, y: 10.28, z: 0}
-  m_LocalScale: {x: 0.02224513, y: 1.3687785, z: 1}
+  m_LocalPosition: {x: -0.0041, y: 8.64, z: 0}
+  m_LocalScale: {x: 0.02224513, y: 0.90366757, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
   m_RootOrder: 17
@@ -879,6 +1135,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &2145010175491623334
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948069233184}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0000076293945}
+  serializedVersion: 2
+  m_Radius: 0.50000006
 --- !u!1 &5157852948077802573
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,9 +1161,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948077802572}
   - component: {fileID: 5157852948077802575}
+  - component: {fileID: 3727695022963343210}
   m_Layer: 0
   m_Name: Lost soul
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -904,8 +1177,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852948077802573}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2105, y: 10.29, z: 0}
-  m_LocalScale: {x: 0.02224513, y: 1.3687785, z: 1}
+  m_LocalPosition: {x: 0.2105, y: 8.64, z: 0}
+  m_LocalScale: {x: 0.02224513, y: 0.90366757, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
   m_RootOrder: 14
@@ -961,6 +1234,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &3727695022963343210
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948077802573}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000038146973, y: -0.0000076293945}
+  serializedVersion: 2
+  m_Radius: 0.50000006
 --- !u!1 &5157852948077958303
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,9 +1260,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948077958302}
   - component: {fileID: 5157852948077958297}
+  - component: {fileID: 7935639360172150282}
   m_Layer: 0
   m_Name: Evil soul (6)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -986,7 +1276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852948077958303}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0046, y: 7.04, z: 0}
+  m_LocalPosition: {x: 0.0046, y: 6.17, z: 0}
   m_LocalScale: {x: 0.02224513, y: 1.6655864, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
@@ -1043,6 +1333,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &7935639360172150282
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948077958303}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &5157852948120064412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,9 +1369,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948120064415}
   - component: {fileID: 5157852948120064414}
+  - component: {fileID: 4757551288319202635}
   m_Layer: 0
   m_Name: Evil soul (5)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1125,6 +1442,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &4757551288319202635
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948120064412}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &5157852948188814385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,9 +1478,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948188814384}
   - component: {fileID: 5157852948188814387}
+  - component: {fileID: 2120511367967496363}
   m_Layer: 0
   m_Name: Evil soul (10)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1150,7 +1494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852948188814385}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.37, y: 6.97, z: 0}
+  m_LocalPosition: {x: 0.37, y: 6.1, z: 0}
   m_LocalScale: {x: 0.02224513, y: 1.6655864, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
@@ -1207,6 +1551,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2120511367967496363
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948188814385}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &5157852948270173768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,9 +1587,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948270173771}
   - component: {fileID: 5157852948270173770}
+  - component: {fileID: 4330005504745248556}
   m_Layer: 0
   m_Name: Evil soul (9)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1289,6 +1660,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &4330005504745248556
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948270173768}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &5157852948331797248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,9 +1696,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948331797251}
   - component: {fileID: 5157852948331797250}
+  - component: {fileID: 4594736810919813998}
   m_Layer: 0
   m_Name: Lost soul (1)
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1314,8 +1712,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852948331797248}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3176, y: 10.51, z: 0}
-  m_LocalScale: {x: 0.02224513, y: 1.3687785, z: 1}
+  m_LocalPosition: {x: 0.3176, y: 8.68, z: 0}
+  m_LocalScale: {x: 0.02224513, y: 0.90366757, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
   m_RootOrder: 15
@@ -1371,6 +1769,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &4594736810919813998
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948331797248}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000076293945, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.50000006
 --- !u!1 &5157852948467953929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,9 +1795,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948467953928}
   - component: {fileID: 5157852948467953931}
+  - component: {fileID: 4494479693914599944}
   m_Layer: 0
   m_Name: Evil soul (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1396,8 +1811,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852948467953929}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3755, y: 9.9, z: 0}
-  m_LocalScale: {x: 0.02224513, y: 1.6655864, z: 1}
+  m_LocalPosition: {x: 0.37489995, y: 7.9, z: 0}
+  m_LocalScale: {x: 0.02224513, y: 1.2505223, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
   m_RootOrder: 7
@@ -1453,6 +1868,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &4494479693914599944
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948467953929}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &5157852948842973817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,9 +1904,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948842973816}
   - component: {fileID: 5157852948842973819}
+  - component: {fileID: 7615474470371114073}
   m_Layer: 0
   m_Name: Evil soul
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1478,11 +1920,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852948842973817}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.068, y: 9.66, z: 0}
-  m_LocalScale: {x: 0.02224513, y: 1.6655864, z: 1}
+  m_LocalPosition: {x: -0.068600036, y: 7.89, z: 0}
+  m_LocalScale: {x: 0.022245131, y: 1.2505224, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5157852948842973819
 SpriteRenderer:
@@ -1535,6 +1977,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &7615474470371114073
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948842973817}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &5157852948852785134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,9 +2013,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948852785129}
   - component: {fileID: 5157852948852785128}
+  - component: {fileID: 8353116616080267702}
   m_Layer: 0
   m_Name: Lost soul (2)
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1560,8 +2029,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852948852785134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1078, y: 10.55, z: 0}
-  m_LocalScale: {x: 0.02224513, y: 1.3687785, z: 1}
+  m_LocalPosition: {x: 0.1078, y: 8.66, z: 0}
+  m_LocalScale: {x: 0.02224513, y: 0.90366757, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
   m_RootOrder: 16
@@ -1617,6 +2086,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &8353116616080267702
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948852785134}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.50000006
 --- !u!1 &5157852948980336593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,9 +2112,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5157852948980336592}
   - component: {fileID: 5157852948980336595}
+  - component: {fileID: 8358983215779290207}
   m_Layer: 0
   m_Name: Evil soul (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1642,8 +2128,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157852948980336593}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1542, y: 9.72, z: 0}
-  m_LocalScale: {x: 0.02224513, y: 1.6655864, z: 1}
+  m_LocalPosition: {x: 0.1536, y: 7.85, z: 0}
+  m_LocalScale: {x: 0.02224513, y: 1.2505223, z: 1}
   m_Children: []
   m_Father: {fileID: 5157852947964507866}
   m_RootOrder: 5
@@ -1699,3 +2185,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &8358983215779290207
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5157852948980336593}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.5}
+    newSize: {x: 1, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+  m_EdgeRadius: 0

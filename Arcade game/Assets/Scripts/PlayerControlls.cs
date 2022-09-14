@@ -12,8 +12,8 @@ public class PlayerControlls : MonoBehaviour
     public float jumpForce;
     public float highGravity;
     public float lowGravity;
-    public float jumpGravity = 5;
-    public float regularGravity = 10;
+    public float jumpGravity;
+    public float regularGravity;
     private float score = 0;
 
 
@@ -32,10 +32,18 @@ public class PlayerControlls : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && isOnGroundScript.isOnGround == true)
         {
             playerRb.velocity = Vector2.up * jumpForce;
-            playerRb.gravityScale = jumpGravity;
+            //playerRb.gravityScale = jumpGravity;
             isOnGroundScript.isOnGround = false;
         }
 
+        if (isOnGroundScript.isOnGround == true)
+        {
+            playerRb.gravityScale = jumpGravity;
+        }
+        else if (isOnGroundScript.isOnGround == false)
+        {
+            playerRb.gravityScale = regularGravity;
+        }
 
         //Lower gravity when holding the up key in order to make the player glide
         if (Input.GetKey(KeyCode.UpArrow) && isOnGroundScript.isOnGround == false)
@@ -47,10 +55,10 @@ public class PlayerControlls : MonoBehaviour
         {
             playerRb.gravityScale = highGravity;
         }
-        else
-        {
-            playerRb.gravityScale = regularGravity;
-        }
+        //else
+        //{
+        //    playerRb.gravityScale = regularGravity;
+        //}
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)

@@ -188,6 +188,9 @@ MonoBehaviour:
   - {fileID: 7774638699202411068, guid: 9c4e1d6a975a08d44a28951b28f63f19, type: 3}
   - {fileID: 4447792984528362176, guid: 04e58cef52e9d1a4d8e217c64b6d0182, type: 3}
   - {fileID: 7141312181410515483, guid: 7e727342caee7fd4aa5cea8b0d150527, type: 3}
+  environmentChunks1: []
+  environmentChunks2: []
+  environmentBonusChunks: []
   startDelay: 1
 --- !u!61 &315611565
 BoxCollider2D:
@@ -645,8 +648,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1175754709}
-  - component: {fileID: 1175754710}
   - component: {fileID: 1175754711}
+  - component: {fileID: 1175754710}
   m_Layer: 0
   m_Name: PlayerFeats
   m_TagString: Untagged
@@ -662,14 +665,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175754708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.028, y: -0.73, z: 0}
+  m_LocalPosition: {x: -0.028, y: -1.019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139046978}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1175754710
-CapsuleCollider2D:
+--- !u!61 &1175754710
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -681,9 +684,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.13975222}
-  m_Size: {x: 0.3, y: 0.4}
-  m_Direction: 0
+  m_Offset: {x: 0.021698281, y: 0.21698898}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2839346, y: 0.49369252}
+  m_EdgeRadius: 0
 --- !u!114 &1175754711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,6 +773,22 @@ MonoBehaviour:
   - {fileID: 5125828412680285060, guid: a91da1e09874fb84a9056506d3c7760f, type: 3}
   - {fileID: 7785275766924612750, guid: 2f526c16c74dfd54c938599edc7dca9b, type: 3}
   - {fileID: 4447792984528362176, guid: 04e58cef52e9d1a4d8e217c64b6d0182, type: 3}
+  environmentChunks1:
+  - {fileID: 6016286985674554509, guid: 61cb38bb6fa7dd04db58c9b70ea9bd71, type: 3}
+  - {fileID: 5125828412680285060, guid: a91da1e09874fb84a9056506d3c7760f, type: 3}
+  - {fileID: 7785275766924612750, guid: 2f526c16c74dfd54c938599edc7dca9b, type: 3}
+  - {fileID: 4447792984528362176, guid: 04e58cef52e9d1a4d8e217c64b6d0182, type: 3}
+  environmentChunks2:
+  - {fileID: 5292390467394131147, guid: ed62a1e62ae87e249ab5b3dbc9e4f44c, type: 3}
+  - {fileID: 30824596269325412, guid: 84c4e66ad3eb8914f862cd9dc743614b, type: 3}
+  - {fileID: 4023556088902795819, guid: 1a7fae32871133b46b8b01b2e91efea3, type: 3}
+  - {fileID: 7774638699202411068, guid: 9c4e1d6a975a08d44a28951b28f63f19, type: 3}
+  environmentBonusChunks:
+  - {fileID: 7726624667534667711, guid: c0a9b15340e3ec5438ab64ea9f1275dc, type: 3}
+  - {fileID: 2175248176077695679, guid: 3de3a62e4e02e524fa9d4706028fcff5, type: 3}
+  - {fileID: 5027741905581464777, guid: 5a530ad30c5873540bbc0f64abfe57a8, type: 3}
+  - {fileID: 7294318033613971987, guid: e26f427851457374887ec13843d2f32d, type: 3}
+  - {fileID: 7584096446561555666, guid: bad44293e18dfd7419c7e7ef72dfecfc, type: 3}
   startDelay: 1
 --- !u!4 &1907581576
 Transform:
@@ -937,7 +966,7 @@ MonoBehaviour:
   highGravity: 40
   lowGravity: 1
   jumpGravity: 5
-  regularGravity: 6
+  regularGravity: 7
 --- !u!114 &2139046982
 MonoBehaviour:
   m_ObjectHideFlags: 0

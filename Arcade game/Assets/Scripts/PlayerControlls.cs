@@ -36,6 +36,7 @@ public class PlayerControlls : MonoBehaviour
             isOnGroundScript.isOnGround = false;
         }
 
+        //Player goes down faster than they go up in a regular jump
         if (isOnGroundScript.isOnGround == true)
         {
             playerRb.gravityScale = jumpGravity;
@@ -46,12 +47,12 @@ public class PlayerControlls : MonoBehaviour
         }
 
         //Lower gravity when holding the up key in order to make the player glide
-        if (Input.GetKey(KeyCode.UpArrow) && isOnGroundScript.isOnGround == false)
+        if (Input.GetKey(KeyCode.UpArrow) && isOnGroundScript.isOnGround == false && !Input.GetKey(KeyCode.Space))
         {
             playerRb.gravityScale = lowGravity;
         }
         //Raise the gravity in order to make the player fall faster
-        else if (Input.GetKey(KeyCode.DownArrow) && isOnGroundScript.isOnGround == false)
+        else if (Input.GetKey(KeyCode.DownArrow) && isOnGroundScript.isOnGround == false && !Input.GetKey(KeyCode.Space))
         {
             playerRb.gravityScale = highGravity;
         }

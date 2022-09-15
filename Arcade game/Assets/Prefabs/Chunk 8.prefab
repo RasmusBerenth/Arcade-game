@@ -867,7 +867,7 @@ GameObject:
   - component: {fileID: 3992589690993332992}
   m_Layer: 0
   m_Name: SpawnDetecter
-  m_TagString: Respawn
+  m_TagString: Respawn1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -9,7 +9,7 @@ public class SpawnManagment : MonoBehaviour
     public GameObject[] environmentChunks2;
     public GameObject[] environmentBonusChunks;
 
-    public float startDelay = 0.5f;
+    public float startDelay;
 
     // Start is called before the first frame update
     void Start()

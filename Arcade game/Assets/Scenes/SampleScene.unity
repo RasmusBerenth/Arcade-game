@@ -1362,7 +1362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989764872}
   m_LocalRotation: {x: -0, y: -0, z: -0.040501036, w: 0.99917954}
-  m_LocalPosition: {x: -0.27699953, y: -0.89399385, z: 0}
+  m_LocalPosition: {x: -0.27699953, y: -1.069, z: 0}
   m_LocalScale: {x: 0.9988616, y: 0.74668145, z: 1}
   m_Children: []
   m_Father: {fileID: 1612940727}
@@ -1526,7 +1526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008058945}
   m_LocalRotation: {x: -0, y: -0, z: -0.026842942, w: 0.9996397}
-  m_LocalPosition: {x: -0.3699994, y: -0.43515667, z: 0}
+  m_LocalPosition: {x: -0.3699994, y: -0.527, z: 0}
   m_LocalScale: {x: 0.9994995, y: 0.74612045, z: 1}
   m_Children: []
   m_Father: {fileID: 1612940727}
@@ -1737,7 +1737,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.006170273}
+  m_Offset: {x: 0, y: 0.0015031397}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1748,7 +1748,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30.583466, y: 1.1323404}
+  m_Size: {x: 30.583466, y: 1.1230061}
   m_EdgeRadius: 0
 --- !u!50 &1114721667
 Rigidbody2D:
@@ -2182,8 +2182,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612940726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5226002, y: 1.7282, z: 500.8631}
-  m_LocalScale: {x: 2.4089026, y: 2.437492, z: 1}
+  m_LocalPosition: {x: 2.5226002, y: 3.7084, z: 500.8631}
+  m_LocalScale: {x: 2.4089026, y: 3.437595, z: 1}
   m_Children:
   - {fileID: 35018131}
   - {fileID: 1048043216}
@@ -2352,7 +2352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770858550}
   m_LocalRotation: {x: -0, y: -0, z: -0.047736276, w: 0.99886}
-  m_LocalPosition: {x: -0.80000156, y: -0.03263905, z: 0}
+  m_LocalPosition: {x: -0.72, y: -0.071, z: 0}
   m_LocalScale: {x: 0.9984194, y: 0.7470703, z: 1}
   m_Children: []
   m_Father: {fileID: 1612940727}
@@ -2570,7 +2570,7 @@ MonoBehaviour:
   - {fileID: 5027741905581464777, guid: 5a530ad30c5873540bbc0f64abfe57a8, type: 3}
   - {fileID: 7294318033613971987, guid: e26f427851457374887ec13843d2f32d, type: 3}
   - {fileID: 7584096446561555666, guid: bad44293e18dfd7419c7e7ef72dfecfc, type: 3}
-  startDelay: 1.2
+  startDelay: 1
 --- !u!4 &1907581576
 Transform:
   m_ObjectHideFlags: 0

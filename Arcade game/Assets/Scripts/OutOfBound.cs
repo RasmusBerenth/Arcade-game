@@ -8,7 +8,7 @@ public class OutOfBound : MonoBehaviour
     PlayerControlls playerControllsScript;
 
     private float lowerBorder = -20;
-    private float upperBorder = 10;
+    private float upperBorder = 8;
     private float leftBorder = -150;
 
     // Start is called before the first frame update

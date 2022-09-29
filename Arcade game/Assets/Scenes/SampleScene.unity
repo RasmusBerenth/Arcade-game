@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 315611564}
   - component: {fileID: 315611565}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Spawner (not in use)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,6 +508,7 @@ MonoBehaviour:
   environmentChunks1: []
   environmentChunks2: []
   environmentBonusChunks: []
+  flyingEnemy: {fileID: 0}
   startDelay: 1
 --- !u!61 &315611565
 BoxCollider2D:
@@ -721,6 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4231ef2970f88a24ebe05b9d8e52c8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toHigh: 0
 --- !u!1 &391829377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4231ef2970f88a24ebe05b9d8e52c8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toHigh: 0
 --- !u!61 &1114721666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2504,7 +2507,7 @@ GameObject:
   - component: {fileID: 1907581574}
   - component: {fileID: 1907581577}
   m_Layer: 0
-  m_Name: Spawner (In use)
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2570,6 +2573,7 @@ MonoBehaviour:
   - {fileID: 5027741905581464777, guid: 5a530ad30c5873540bbc0f64abfe57a8, type: 3}
   - {fileID: 7294318033613971987, guid: e26f427851457374887ec13843d2f32d, type: 3}
   - {fileID: 7584096446561555666, guid: bad44293e18dfd7419c7e7ef72dfecfc, type: 3}
+  flyingEnemy: {fileID: 4377221356267495924, guid: 69d77d44541fac44782aa1a7d7475ddb, type: 3}
   startDelay: 1
 --- !u!4 &1907581576
 Transform:

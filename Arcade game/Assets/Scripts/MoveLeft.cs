@@ -5,12 +5,21 @@ using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
     PlayerControlls playerControllsScript;
-    private float speed = 18.0f;
+    private float speed;
 
     // Start is called before the first frame update
     void Start()
     {
         playerControllsScript = GameObject.Find("Player").GetComponent<PlayerControlls>();
+        if (CompareTag("Enemy"))
+        {
+            speed = 60;
+        }
+        else
+        {
+            speed = 18;
+        }
+
     }
 
     // Update is called once per frame

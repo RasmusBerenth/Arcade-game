@@ -8,20 +8,31 @@ public class SpawnManagment : MonoBehaviour
     public GameObject[] environmentChunks1;
     public GameObject[] environmentChunks2;
     public GameObject[] environmentBonusChunks;
+    public GameObject flyingEnemy;
+
+    OutOfBound outOfBoundScript;
 
     public float startDelay;
+    public bool hasSpawned = false;
 
     // Start is called before the first frame update
     void Start()
     {
         //InvokeRepeating("SpawnChunks", startDelay, spawnInterval);
         Invoke("SpawnChunks", startDelay);
+        outOfBoundScript = GameObject.Find("Player").GetComponent<OutOfBound>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //If the player goes to high spawn an enemy
+        if (outOfBoundScript.toHigh == true && hasSpawned == false)
+        {
+            Vector2 enemySpawnPosition = new Vector2(32, 8);
+            Instantiate(flyingEnemy, enemySpawnPosition, flyingEnemy.transform.rotation);
+            hasSpawned = true;
+        }
     }
 
     void SpawnChunks()

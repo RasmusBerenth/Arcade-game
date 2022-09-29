@@ -11,6 +11,8 @@ public class OutOfBound : MonoBehaviour
     private float upperBorder = 8;
     private float leftBorder = -150;
 
+    public bool toHigh = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class OutOfBound : MonoBehaviour
         //Player can't leave the screen upwards and ends the game if they go downwards
         if (transform.position.y < lowerBorder)
         {
+            toHigh = false;
             playerControllsScript.gameOver = true;
             Destroy(gameObject);
             Debug.Log("Game Over!");
@@ -37,6 +40,7 @@ public class OutOfBound : MonoBehaviour
         else if (transform.position.y > upperBorder)
         {
             rb.AddForce(Vector2.down * 10);
+            toHigh = true;
         }
     }
 }

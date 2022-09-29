@@ -135,7 +135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724721234494942362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1837, y: 1.51, z: 0}
+  m_LocalPosition: {x: -0.239, y: 6.01, z: 0}
   m_LocalScale: {x: 0.008542217, y: 0.32073683, z: 1}
   m_Children: []
   m_Father: {fileID: 7294318033613971989}
@@ -992,7 +992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5044272650230046937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.395, y: 7.36, z: 0}
+  m_LocalPosition: {x: 0.371, y: 2.24, z: 0}
   m_LocalScale: {x: 0.014275239, y: 0.5263158, z: 1}
   m_Children: []
   m_Father: {fileID: 7294318033613971989}
@@ -1309,7 +1309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5545546861354437666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2013, y: 1.51, z: 0}
+  m_LocalPosition: {x: 0.1, y: 7.52, z: 0}
   m_LocalScale: {x: 0.008542217, y: 0.32073683, z: 1}
   m_Children: []
   m_Father: {fileID: 7294318033613971989}
@@ -2309,7 +2309,7 @@ GameObject:
   - component: {fileID: 8657976963792030960}
   m_Layer: 0
   m_Name: SpawnDetecter
-  m_TagString: Respawn
+  m_TagString: Respawn1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

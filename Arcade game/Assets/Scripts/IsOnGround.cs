@@ -5,12 +5,16 @@ using UnityEngine;
 public class IsOnGround : MonoBehaviour
 {
     public bool isOnGround;
-    private PlayerControlls playerControllsScript;
+    PlayerControlls playerControllsScript;
+    SpawnManagment spawnManagmentScript;
+    OutOfBound outOfBoundScript;
 
     // Start is called before the first frame update
     void Start()
     {
         playerControllsScript = GameObject.Find("Player").GetComponent<PlayerControlls>();
+        spawnManagmentScript = GameObject.Find("Spawner").GetComponent<SpawnManagment>();
+        outOfBoundScript = GameObject.Find("Player").GetComponent<OutOfBound>();
     }
 
     // Update is called once per frame
@@ -23,5 +27,7 @@ public class IsOnGround : MonoBehaviour
     {
         isOnGround = true;
         playerControllsScript.jumps = 2;
+        spawnManagmentScript.hasSpawned = false;
+        outOfBoundScript.toHigh = false;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
     PlayerControlls playerControllsScript;
-    private float speed;
+    [SerializeField] private float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,10 @@ public class MoveLeft : MonoBehaviour
         if (CompareTag("Enemy"))
         {
             speed = 60;
+        }
+        else if (CompareTag("Background"))
+        {
+            speed = 5;
         }
         else
         {

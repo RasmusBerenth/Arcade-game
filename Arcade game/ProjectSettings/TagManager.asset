@@ -9,6 +9,7 @@ TagManager:
   - Collectable
   - Respawn1
   - RespawnB
+  - Background
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,14 @@ public class MoveLeft : MonoBehaviour
         {
             speed = 5;
         }
+        else if (CompareTag("Background1"))
+        {
+            speed = 7;
+        }
+        else if (CompareTag("Background2"))
+        {
+            speed = 9;
+        }
         else
         {
             speed = 18;

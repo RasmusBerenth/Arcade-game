@@ -10,6 +10,8 @@ TagManager:
   - Respawn1
   - RespawnB
   - Background
+  - Background1
+  - Background2
   layers:
   - Default
   - TransparentFX

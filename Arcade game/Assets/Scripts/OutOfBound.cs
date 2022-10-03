@@ -27,6 +27,11 @@ public class OutOfBound : MonoBehaviour
         if (transform.position.x < leftBorder)
         {
             Destroy(gameObject);
+
+            if (CompareTag("Player"))
+            {
+                playerControllsScript.gameOver = true;
+            }
         }
 
         //Player can't leave the screen upwards and ends the game if they go downwards

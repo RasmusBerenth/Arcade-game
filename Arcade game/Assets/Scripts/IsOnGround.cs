@@ -13,8 +13,9 @@ public class IsOnGround : MonoBehaviour
     void Start()
     {
         playerControllsScript = GameObject.Find("Player").GetComponent<PlayerControlls>();
-        spawnManagmentScript = GameObject.Find("Spawner").GetComponent<SpawnManagment>();
         outOfBoundScript = GameObject.Find("Player").GetComponent<OutOfBound>();
+        spawnManagmentScript = GameObject.Find("Spawner").GetComponent<SpawnManagment>();
+
     }
 
     // Update is called once per frame

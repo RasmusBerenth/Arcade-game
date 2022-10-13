@@ -7,6 +7,8 @@ public class PlayerControlls : MonoBehaviour
     private Rigidbody2D playerRb;
     private IsOnGround isOnGroundScript;
 
+    public Animator animations;
+
     public bool gameOver = false;
     public float jumpForce;
     public float highGravity;
@@ -21,6 +23,7 @@ public class PlayerControlls : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         isOnGroundScript = GameObject.Find("PlayerFeats").GetComponent<IsOnGround>();
+        animations = GameObject.Find("ghost sprite").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,31 +41,41 @@ public class PlayerControlls : MonoBehaviour
                 jumpForce = 25;
             }
 
+            animations.SetTrigger("jump_trig");
+
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
             isOnGroundScript.isOnGround = false;
+
             jumps -= 1;
         }
+
 
         //Player goes down faster than they go up in a regular jump
         if (isOnGroundScript.isOnGround == true)
         {
             playerRb.gravityScale = jumpGravity;
+            animations.SetBool("grounded_bool", true);
         }
         else if (isOnGroundScript.isOnGround == false)
         {
             playerRb.gravityScale = regularGravity;
+            animations.SetBool("grounded_bool", false);
         }
 
         //Lower gravity when holding the up key in order to make the player glide
         if (Input.GetKey(KeyCode.UpArrow) && isOnGroundScript.isOnGround == false)
         {
             playerRb.gravityScale = lowGravity;
+            animations.SetTrigger("glide_trig");
         }
         //Raise the gravity in order to make the player fall faster
         else if (Input.GetKey(KeyCode.DownArrow) && isOnGroundScript.isOnGround == false)
         {
             playerRb.gravityScale = highGravity;
+            animations.SetTrigger("dive_trig");
         }
+
+
     }
 
 

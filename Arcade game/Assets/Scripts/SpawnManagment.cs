@@ -12,7 +12,7 @@ public class SpawnManagment : MonoBehaviour
 
     OutOfBound outOfBoundScript;
 
-    public float startDelay;
+    [SerializeField] private float startDelay;
     public bool hasSpawned = false;
 
     // Start is called before the first frame update

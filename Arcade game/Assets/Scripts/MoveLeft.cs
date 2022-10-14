@@ -29,7 +29,7 @@ public class MoveLeft : MonoBehaviour
         }
         else
         {
-            speed = 0; //18
+            speed = 18; //18
         }
 
     }

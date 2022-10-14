@@ -301,7 +301,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!61 &4080455664782744932
 BoxCollider2D:
@@ -1669,7 +1669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6297005016513267419}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.25397223, y: 0.2183, z: 0}
+  m_LocalPosition: {x: 2.7, y: -1.1, z: 0}
   m_LocalScale: {x: 2.002029, y: 1.8534176, z: 1}
   m_Children: []
   m_Father: {fileID: 5691582324881686427}

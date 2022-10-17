@@ -13,6 +13,7 @@ public class SpawnManagment : MonoBehaviour
     OutOfBound outOfBoundScript;
 
     [SerializeField] private float startDelay;
+
     public bool hasSpawned = false;
 
     // Start is called before the first frame update
@@ -67,7 +68,6 @@ public class SpawnManagment : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Spawn new chunk when hitting the spawner
-
         if (collision.CompareTag("Respawn"))
         {
             Debug.Log("Triggerd");

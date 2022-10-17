@@ -26,6 +26,7 @@ public class IsOnGround : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Cheacks when the player is on the ground, sets jumps to 2 and booleans preventing/detering the player from jumping to high (hasSpawned and toHigh booleans)
         isOnGround = true;
         playerControllsScript.jumps = 2;
         spawnManagmentScript.hasSpawned = false;

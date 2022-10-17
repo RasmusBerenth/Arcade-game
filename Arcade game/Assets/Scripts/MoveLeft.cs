@@ -10,6 +10,8 @@ public class MoveLeft : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Controlls the speed of different objects
+
         playerControllsScript = GameObject.Find("Player").GetComponent<PlayerControlls>();
         if (CompareTag("Enemy"))
         {
@@ -29,7 +31,7 @@ public class MoveLeft : MonoBehaviour
         }
         else
         {
-            speed = 18; //18
+            speed = 0; //18
         }
 
     }

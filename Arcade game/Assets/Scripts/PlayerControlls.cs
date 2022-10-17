@@ -10,12 +10,13 @@ public class PlayerControlls : MonoBehaviour
     public Animator animations;
 
     public bool gameOver = false;
-    public float jumpForce;
-    public float highGravity;
-    public float lowGravity;
-    public float jumpGravity;
-    public float regularGravity;
-    private float score = 0;
+
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float highGravity;
+    [SerializeField] private float lowGravity;
+    [SerializeField] private float jumpGravity;
+    [SerializeField] private float regularGravity;
+    [SerializeField] private float score = 0;
     public int jumps = 2;
 
     private int scorePoint = 1;
@@ -103,7 +104,7 @@ public class PlayerControlls : MonoBehaviour
         //Collectables are worth 1 point
         if (collision.CompareTag("Collectable"))
         {
-            score += scorePoint;
+            score = scorePoint;
             Debug.Log($"Score: {score}");
             Destroy(collision.gameObject);
         }

@@ -9,6 +9,9 @@ public class PlayerControlls : MonoBehaviour
 
     public Animator animations;
 
+    public ParticleSystem lostSoulParticles;
+    public ParticleSystem goodSoulParticles;
+
     public bool gameOver = false;
 
     [SerializeField] private float jumpForce;
@@ -104,16 +107,18 @@ public class PlayerControlls : MonoBehaviour
         //Collectables are worth 1 point
         if (collision.CompareTag("Collectable"))
         {
-            score = scorePoint;
-            Debug.Log($"Score: {score}");
+            score += scorePoint;
             Destroy(collision.gameObject);
+            lostSoulParticles.Play();
+            Debug.Log($"Score: {score}");
         }
         //Bonus collectables dubble your score
         if (collision.CompareTag("Bonus"))
         {
             score *= 2;
-            Debug.Log($"Score: {score}");
             Destroy(collision.gameObject);
+            goodSoulParticles.Play();
+            Debug.Log($"Score: {score}");
         }
     }
 }

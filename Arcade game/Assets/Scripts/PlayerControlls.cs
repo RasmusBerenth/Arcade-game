@@ -11,6 +11,7 @@ public class PlayerControlls : MonoBehaviour
 
     public ParticleSystem lostSoulParticles;
     public ParticleSystem goodSoulParticles;
+    public ParticleSystem playerSpeedParticles;
 
     public bool gameOver = false;
 
@@ -53,6 +54,8 @@ public class PlayerControlls : MonoBehaviour
 
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
             isOnGroundScript.isOnGround = false;
+
+
 
             jumps -= 1;
         }

@@ -70,7 +70,7 @@ public class PlayerControlls : MonoBehaviour
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
             isOnGroundScript.isOnGround = false;
 
-            //playerSpeedParticles.transform.rotation = new Quaternion(0, 0, 0, 0);
+
 
             jumps -= 1;
         }

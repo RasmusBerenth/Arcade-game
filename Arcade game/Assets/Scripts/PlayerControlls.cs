@@ -12,8 +12,10 @@ public class PlayerControlls : MonoBehaviour
     public ParticleSystem lostSoulParticles;
     public ParticleSystem goodSoulParticles;
     public ParticleSystem playerSpeedParticles;
+    public ParticleSystem bonusSpeedParticles;
 
     public bool gameOver = false;
+    public bool hasPowerUp = false;
 
     [SerializeField] private float jumpForce;
     [SerializeField] private float highGravity;
@@ -36,6 +38,22 @@ public class PlayerControlls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Switch to and from power up mode
+        if (hasPowerUp == true)
+        {
+            playerSpeedParticles.Stop();
+            scorePoint = 2;
+            bonusSpeedParticles.Play();
+
+
+        }
+        else
+        {
+            scorePoint = 1;
+            bonusSpeedParticles.Stop();
+            playerSpeedParticles.Play();
+        }
+
         //Jump when you press the space bar (this can happen twice)
         if (Input.GetKeyDown(KeyCode.Space) && isOnGroundScript.isOnGround == true || Input.GetKeyDown(KeyCode.Space) && jumps > 0)
         {
@@ -54,8 +72,6 @@ public class PlayerControlls : MonoBehaviour
 
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
             isOnGroundScript.isOnGround = false;
-
-
 
             jumps -= 1;
         }
@@ -93,10 +109,7 @@ public class PlayerControlls : MonoBehaviour
             animations.SetBool("dive_bool", false);
             animations.SetBool("glide_bool", false);
         }
-
-
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -118,10 +131,19 @@ public class PlayerControlls : MonoBehaviour
         //Bonus collectables dubble your score
         if (collision.CompareTag("Bonus"))
         {
-            score *= 2;
             Destroy(collision.gameObject);
+            hasPowerUp = true;
+            //StartCoroutine(GoodSoulTimer());
             goodSoulParticles.Play();
-            Debug.Log($"Score: {score}");
+            Debug.Log($"Power up is set to {hasPowerUp}");
         }
     }
+
+    //How long the power up mode last
+    //IEnumerator GoodSoulTimer()
+    //{
+    //    yield return new WaitForSeconds(8);
+    //    hasPowerUp = false;
+    //    Debug.Log($"Powerup is now {hasPowerUp}");
+    //}
 }

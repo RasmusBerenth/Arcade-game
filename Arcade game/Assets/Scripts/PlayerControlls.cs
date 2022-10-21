@@ -23,9 +23,9 @@ public class PlayerControlls : MonoBehaviour
     [SerializeField] private float jumpGravity;
     [SerializeField] private float regularGravity;
     [SerializeField] private float score = 0;
-    public int jumps = 2;
 
-    private int scorePoint = 1;
+    public int jumps = 2;
+    private int scorePoint;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,9 @@ public class PlayerControlls : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         isOnGroundScript = GameObject.Find("PlayerFeats").GetComponent<IsOnGround>();
         animations = GameObject.Find("ghost sprite").GetComponent<Animator>();
+
+        playerSpeedParticles = GameObject.Find("Player Speed Lines").GetComponent<ParticleSystem>();
+        bonusSpeedParticles = GameObject.Find("Player Powerup Speed Lines").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -41,17 +44,11 @@ public class PlayerControlls : MonoBehaviour
         //Switch to and from power up mode
         if (hasPowerUp == true)
         {
-            playerSpeedParticles.Stop();
             scorePoint = 2;
-            bonusSpeedParticles.Play();
-
-
         }
         else
         {
             scorePoint = 1;
-            bonusSpeedParticles.Stop();
-            playerSpeedParticles.Play();
         }
 
         //Jump when you press the space bar (this can happen twice)
@@ -73,9 +70,10 @@ public class PlayerControlls : MonoBehaviour
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
             isOnGroundScript.isOnGround = false;
 
+            //playerSpeedParticles.transform.rotation = new Quaternion(0, 0, 0, 0);
+
             jumps -= 1;
         }
-
 
         //Player goes down faster than they go up in a regular jump and regulating animation booleans
         if (isOnGroundScript.isOnGround == true)
@@ -125,25 +123,35 @@ public class PlayerControlls : MonoBehaviour
         {
             score += scorePoint;
             Destroy(collision.gameObject);
+
             lostSoulParticles.Play();
+
             Debug.Log($"Score: {score}");
         }
-        //Bonus collectables dubble your score
+        //Bonus collectables dubble your score gained from lost souls for a short duration
         if (collision.CompareTag("Bonus"))
         {
             Destroy(collision.gameObject);
             hasPowerUp = true;
-            //StartCoroutine(GoodSoulTimer());
+
+            StartCoroutine(GoodSoulTimer());
+
+            playerSpeedParticles.Stop();
             goodSoulParticles.Play();
+            bonusSpeedParticles.Play();
+
             Debug.Log($"Power up is set to {hasPowerUp}");
         }
     }
 
-    //How long the power up mode last
-    //IEnumerator GoodSoulTimer()
-    //{
-    //    yield return new WaitForSeconds(8);
-    //    hasPowerUp = false;
-    //    Debug.Log($"Powerup is now {hasPowerUp}");
-    //}
+    //How long the power up mode last (10 seconds) and also stops and plays the appropiate trails
+    IEnumerator GoodSoulTimer()
+    {
+        yield return new WaitForSeconds(10);
+        hasPowerUp = false;
+        bonusSpeedParticles.Stop();
+        playerSpeedParticles.Play();
+
+        Debug.Log($"Powerup is now {hasPowerUp}");
+    }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControlls : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class PlayerControlls : MonoBehaviour
     [SerializeField] private float jumpGravity;
     [SerializeField] private float regularGravity;
 
-    public int score = 0;
+    public int score;
     public int jumps = 2;
 
     private int scorePoint;
@@ -78,8 +79,6 @@ public class PlayerControlls : MonoBehaviour
             }
 
             animations.SetTrigger("jump_trig");
-
-
 
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
             isOnGroundScript.isOnGround = false;
@@ -136,8 +135,6 @@ public class PlayerControlls : MonoBehaviour
 
             Destroy(gameObject);
             Debug.Log("Game Over");
-
-
         }
         //Collectables are worth 1 point
         if (collision.CompareTag("Collectable"))

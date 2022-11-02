@@ -17,6 +17,9 @@ public class PlayerControlls : MonoBehaviour
     public ParticleSystem bonusSpeedParticles;
     public ParticleSystem deathParticles;
 
+    public AudioClip lostSoulSound;
+    public AudioClip goodSoulSound;
+
     public bool gameOver = false;
     public bool hasPowerUp = false;
 

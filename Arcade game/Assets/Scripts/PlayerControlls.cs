@@ -19,6 +19,7 @@ public class PlayerControlls : MonoBehaviour
 
     public AudioClip lostSoulSound;
     public AudioClip goodSoulSound;
+    AudioSource playerSound;
 
     public bool gameOver = false;
     public bool hasPowerUp = false;
@@ -38,7 +39,7 @@ public class PlayerControlls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        deathParticles.GetComponent<ParticleSystem>();
+        playerSound = GetComponent<AudioSource>();
 
         playerRb = GetComponent<Rigidbody2D>();
 
@@ -46,9 +47,6 @@ public class PlayerControlls : MonoBehaviour
         moveLeftScript = GameObject.Find("ground").GetComponent<MoveLeft>();
 
         animations = GameObject.Find("ghost sprite").GetComponent<Animator>();
-
-        playerSpeedParticles = GameObject.Find("Player Speed Lines").GetComponent<ParticleSystem>();
-        bonusSpeedParticles = GameObject.Find("Player Powerup Speed Lines").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -133,6 +131,7 @@ public class PlayerControlls : MonoBehaviour
             main.maxParticles = soulsCollected;
             deathParticles.transform.parent = null;
             deathParticles.Play();
+
             playerSpeedParticles.Stop();
             bonusSpeedParticles.Stop();
 
@@ -146,8 +145,10 @@ public class PlayerControlls : MonoBehaviour
             Destroy(collision.gameObject);
 
             lostSoulParticles.Play();
-            Debug.Log($"Score: {score}");
 
+            playerSound.PlayOneShot(lostSoulSound, 1.0f);
+
+            Debug.Log($"Score: {score}");
             soulsCollected++;
         }
         //Bonus collectables dubble your score gained from lost souls for a short duration
@@ -161,6 +162,8 @@ public class PlayerControlls : MonoBehaviour
             playerSpeedParticles.Stop();
             goodSoulParticles.Play();
             bonusSpeedParticles.Play();
+
+            playerSound.PlayOneShot(goodSoulSound, 1.0f);
 
             Debug.Log($"Power up is set to {hasPowerUp}");
         }

@@ -9,6 +9,7 @@ public class GameUI : MonoBehaviour
     public TextMeshProUGUI scoreTextEnd;
     public GameObject gameOverScreen;
     public GameObject scoreObject;
+    //private float intermissionTime = 1;
 
     PlayerControlls playerControllsScripts;
 
@@ -28,6 +29,15 @@ public class GameUI : MonoBehaviour
         {
             gameOverScreen.SetActive(true);
             scoreObject.SetActive(false);
+            //StartCoroutine(Intermission());
         }
     }
+
+    //IEnumerator Intermission()
+    //{
+    //    yield return new WaitForSeconds(intermissionTime);
+
+    //    gameOverScreen.SetActive(true);
+    //    scoreObject.SetActive(false);
+    //}
 }

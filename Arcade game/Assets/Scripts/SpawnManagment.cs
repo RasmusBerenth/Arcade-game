@@ -19,7 +19,6 @@ public class SpawnManagment : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //InvokeRepeating("SpawnChunks", startDelay, spawnInterval);
         Invoke("SpawnChunks", startDelay);
         outOfBoundScript = GameObject.Find("Player").GetComponent<OutOfBound>();
     }

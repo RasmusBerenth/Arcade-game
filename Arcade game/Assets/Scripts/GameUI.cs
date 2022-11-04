@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI scoreTextEnd;
+    public TextMeshProUGUI highScoreText;
+
     public GameObject gameOverScreen;
     public GameObject scoreObject;
-    //private float intermissionTime = 1;
 
     PlayerControlls playerControllsScripts;
 
@@ -17,11 +19,18 @@ public class GameUI : MonoBehaviour
     void Start()
     {
         playerControllsScripts = GameObject.Find("Player").GetComponent<PlayerControlls>();
+        highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
+        if (playerControllsScripts.score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", playerControllsScripts.score);
+            highScoreText.text = "New High Score: " + playerControllsScripts.score.ToString();
+        }
+
         scoreText.text = "Score: " + playerControllsScripts.score;
         scoreTextEnd.text = "Score: " + playerControllsScripts.score;
 
@@ -29,15 +38,14 @@ public class GameUI : MonoBehaviour
         {
             gameOverScreen.SetActive(true);
             scoreObject.SetActive(false);
-            //StartCoroutine(Intermission());
         }
     }
 
-    //IEnumerator Intermission()
-    //{
-    //    yield return new WaitForSeconds(intermissionTime);
+    public void ResetHighScore()
+    {
+        PlayerPrefs.DeleteKey("HighScore");
+        highScoreText.text = "High Score: 0";
+    }
 
-    //    gameOverScreen.SetActive(true);
-    //    scoreObject.SetActive(false);
-    //}
+
 }

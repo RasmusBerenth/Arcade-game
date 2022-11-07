@@ -9,7 +9,8 @@ public class OutOfBound : MonoBehaviour
 
     private float lowerBorder = -20;
     private float upperBorder = 8;
-    private float leftBorder = -150;
+    private float worldLeftBorder = -150;
+    private float playerLeftBorder = -23;
 
     public bool toHigh = false;
 
@@ -24,14 +25,14 @@ public class OutOfBound : MonoBehaviour
     void Update()
     {
         //Platforms are destroyed after they leave the screen
-        if (transform.position.x < leftBorder)
+        if (transform.position.x < worldLeftBorder)
         {
             Destroy(gameObject);
+        }
 
-            if (CompareTag("Player"))
-            {
-                playerControllsScript.gameOver = true;
-            }
+        if (CompareTag("Player") && transform.position.x < playerLeftBorder)
+        {
+            rb.AddForce(Vector2.right * 5);
         }
 
         //Player can't leave the screen upwards and ends the game if they go downwards

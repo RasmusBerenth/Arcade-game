@@ -30,7 +30,7 @@ public class PlayerControlls : MonoBehaviour
     [SerializeField] private float jumpGravity;
     [SerializeField] private float regularGravity;
 
-    public int score;
+    public int score = 0;
     public int jumps = 2;
 
     private int scorePoint;
@@ -136,17 +136,18 @@ public class PlayerControlls : MonoBehaviour
             bonusSpeedParticles.Stop();
 
             Destroy(gameObject);
+
             Debug.Log("Game Over");
         }
         //Collectables are worth 1 point
         if (collision.CompareTag("Collectable"))
         {
-            score += scorePoint;
             Destroy(collision.gameObject);
+            score += scorePoint;
 
             lostSoulParticles.Play();
 
-            playerSound.PlayOneShot(lostSoulSound, 1.0f);
+            playerSound.PlayOneShot(lostSoulSound, 0.7f);
 
             Debug.Log($"Score: {score}");
             soulsCollected++;
@@ -163,11 +164,12 @@ public class PlayerControlls : MonoBehaviour
             goodSoulParticles.Play();
             bonusSpeedParticles.Play();
 
-            playerSound.PlayOneShot(goodSoulSound, 1.0f);
+            playerSound.PlayOneShot(goodSoulSound, 0.4f);
 
             Debug.Log($"Power up is set to {hasPowerUp}");
         }
     }
+
 
     //How long the power up mode last (10 seconds) and also stops and plays the appropiate trails
     IEnumerator GoodSoulTimer()

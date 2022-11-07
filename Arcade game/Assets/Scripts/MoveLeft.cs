@@ -31,9 +31,19 @@ public class MoveLeft : MonoBehaviour
         }
         else
         {
-            speed = 15;
+            if (playerControllsScript.score < 30)
+            {
+                speed = 15;
+            }
+            else if (playerControllsScript.score < 80)
+            {
+                speed = 18;
+            }
+            else
+            {
+                speed = 20;
+            }
         }
-
     }
 
     // Update is called once per frame

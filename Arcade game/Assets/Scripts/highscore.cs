@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class highscore : MonoBehaviour
 {
-    GameUI gameUIScript;
     public TextMeshProUGUI highScoreText;
 
     // Start is called before the first frame update
-    void Awaken()
+    void Awake()
     {
-        gameUIScript = GetComponent<GameUI>();
-        highScoreText.text = gameUIScript.highScoreText.ToString();
+        highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
     // Update is called once per frame

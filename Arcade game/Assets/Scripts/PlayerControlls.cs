@@ -66,7 +66,7 @@ public class PlayerControlls : MonoBehaviour
         }
 
         //Jump when you press the space bar (this can happen twice)
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGroundScript.isOnGround == true && gameOver == false || Input.GetKeyDown(KeyCode.Space) && jumps > 0 && gameOver == false)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGroundScript.isOnGround == true || Input.GetKeyDown(KeyCode.Space) && jumps > 0)
         {
             //First jump (slightly weaker than the second jump)
             if (jumps == 1)
@@ -102,13 +102,13 @@ public class PlayerControlls : MonoBehaviour
         }
 
         //Lower gravity when holding the up key in order to make the player glide
-        if (Input.GetKey(KeyCode.UpArrow) && isOnGroundScript.isOnGround == false && gameOver == false)
+        if (Input.GetKey(KeyCode.UpArrow) && isOnGroundScript.isOnGround == false)
         {
             playerRb.gravityScale = lowGravity;
             animations.SetBool("glide_bool", true);
         }
         //Raise the gravity in order to make the player fall faster
-        else if (Input.GetKey(KeyCode.DownArrow) && isOnGroundScript.isOnGround == false && gameOver == false)
+        else if (Input.GetKey(KeyCode.DownArrow) && isOnGroundScript.isOnGround == false)
         {
             playerRb.gravityScale = highGravity;
             animations.SetBool("dive_bool", true);

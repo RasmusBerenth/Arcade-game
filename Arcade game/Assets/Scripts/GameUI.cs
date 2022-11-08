@@ -40,14 +40,4 @@ public class GameUI : MonoBehaviour
             scoreObject.SetActive(false);
         }
     }
-
-    public void ResetHighScore()
-    {
-        playerControllsScripts.score = 0;
-        PlayerPrefs.DeleteKey("HighScore");
-        highScoreText.text = "High Score: 0";
-
-    }
-
-
 }

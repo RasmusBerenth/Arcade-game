@@ -11,12 +11,13 @@ public class MoveLeft : MonoBehaviour
     void Start()
     {
         //Controlls the speed of different objects
-
         playerControllsScript = GameObject.Find("Player").GetComponent<PlayerControlls>();
-        if (CompareTag("Enemy"))
+
+        if (CompareTag("Enemy")) //The flying enemy moving across the screen when the player jumps to high
         {
             speed = 60;
         }
+        //Creating the parallax effect to the background
         else if (CompareTag("Background"))
         {
             speed = 5;
@@ -31,11 +32,12 @@ public class MoveLeft : MonoBehaviour
         }
         else
         {
+            //Sets difficulty curved
             if (playerControllsScript.score < 30)
             {
                 speed = 15;
             }
-            else if (playerControllsScript.score < 80)
+            else if (playerControllsScript.score < 70)
             {
                 speed = 18;
             }

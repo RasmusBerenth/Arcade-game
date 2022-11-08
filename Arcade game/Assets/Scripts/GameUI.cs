@@ -25,12 +25,14 @@ public class GameUI : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        //Replace highscore
         if (playerControllsScripts.score > PlayerPrefs.GetInt("HighScore", 0))
         {
             PlayerPrefs.SetInt("HighScore", playerControllsScripts.score);
             highScoreText.text = "New High Score: " + playerControllsScripts.score.ToString();
         }
 
+        //Display Score in UI
         scoreText.text = "Score: " + playerControllsScripts.score;
         scoreTextEnd.text = "Score: " + playerControllsScripts.score;
 

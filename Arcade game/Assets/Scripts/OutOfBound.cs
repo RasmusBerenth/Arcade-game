@@ -30,6 +30,7 @@ public class OutOfBound : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //Player can't be pushed behind the chaser
         if (CompareTag("Player") && transform.position.x < playerLeftBorder)
         {
             rb.AddForce(Vector2.right * 5);

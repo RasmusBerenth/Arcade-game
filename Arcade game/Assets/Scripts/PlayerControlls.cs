@@ -19,10 +19,11 @@ public class PlayerControlls : MonoBehaviour
 
     public AudioClip lostSoulSound;
     public AudioClip goodSoulSound;
-    AudioSource playerSound;
+    private AudioSource playerSound;
 
     public bool gameOver = false;
-    public bool hasPowerUp = false;
+    private bool hasPowerUp = false;
+    private bool Collected = false;
 
     [SerializeField] private float jumpForce;
     [SerializeField] private float highGravity;
@@ -52,6 +53,7 @@ public class PlayerControlls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Rotate the speed lines based on the players volocity
         playerSpeedParticles.transform.LookAt(playerRb.position - playerRb.velocity - moveLeftScript.speed * Vector2.right);
         bonusSpeedParticles.transform.LookAt(playerRb.position - playerRb.velocity - moveLeftScript.speed * Vector2.right);
 
@@ -68,12 +70,12 @@ public class PlayerControlls : MonoBehaviour
         //Jump when you press the space bar (this can happen twice)
         if (Input.GetKeyDown(KeyCode.Space) && isOnGroundScript.isOnGround == true || Input.GetKeyDown(KeyCode.Space) && jumps > 0)
         {
-            //First jump (slightly weaker than the second jump)
+            //Second jump
             if (jumps == 1)
             {
                 jumpForce = jumpForce - 5;
             }
-            //Second jump
+            //First jump (slightly weaker than the second jump)
             else if (jumps == 2)
             {
                 jumpForce = 25;
@@ -118,10 +120,13 @@ public class PlayerControlls : MonoBehaviour
             animations.SetBool("dive_bool", false);
             animations.SetBool("glide_bool", false);
         }
+
+        Collected = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         //If player collides with an "enemy" the game is over
         if (collision.CompareTag("Enemy"))
         {
@@ -142,15 +147,20 @@ public class PlayerControlls : MonoBehaviour
         //Collectables are worth 1 point
         if (collision.CompareTag("Collectable"))
         {
-            Destroy(collision.gameObject);
-            score += scorePoint;
+            if (!Collected)
+            {
+                Collected = true;
 
-            lostSoulParticles.Play();
+                score += scorePoint;
+                Destroy(collision.gameObject);
 
-            playerSound.PlayOneShot(lostSoulSound, 0.7f);
+                lostSoulParticles.Play();
 
-            Debug.Log($"Score: {score}");
-            soulsCollected++;
+                playerSound.PlayOneShot(lostSoulSound, 0.7f);
+
+                Debug.Log($"Score: {score}, added {scorePoint}");
+                soulsCollected++;
+            }
         }
         //Bonus collectables dubble your score gained from lost souls for a short duration
         if (collision.CompareTag("Bonus"))

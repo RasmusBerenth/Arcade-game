@@ -26,6 +26,9 @@ public class PlayerControlls : MonoBehaviour
     private bool hasPowerUp = false;
     private bool Collected = false;
 
+    public bool canGlide = false;
+    public bool canDive = false;
+
     [SerializeField] private float jumpForce;
     [SerializeField] private float highGravity;
     [SerializeField] private float lowGravity;
@@ -43,14 +46,10 @@ public class PlayerControlls : MonoBehaviour
     private void Awake()
     {
         controlls = new GameControlls();
-        controlls.KeyboardControlls.Jump.performed += context => Jump();
 
-        controlls.KeyboardControlls.AirManuver.performed += AirManuver;
-        controlls.KeyboardControlls.AirManuver.canceled += AirManuver;
-
-        //controlls.KeyboardControlls.Glide.performed += context => Glide();
-        //controlls.KeyboardControlls.Dive.performed += context => Dive();
-
+        controlls.GamePlayControlls.Jump.performed += context => OnJump();
+        controlls.GamePlayControlls.Glide.performed += context => OnGlide(context);
+        controlls.GamePlayControlls.Dive.performed += context => OnDive(context);
     }
 
     // Start is called before the first frame update
@@ -83,28 +82,6 @@ public class PlayerControlls : MonoBehaviour
             scorePoint = 1;
         }
 
-        //Jump when you press the space bar (this can happen twice)
-        //if (Input.GetKeyDown(KeyCode.Space) && isOnGroundScript.isOnGround == true || Input.GetKeyDown(KeyCode.Space) && jumps > 0)
-        //{
-        //    //Second jump
-        //    if (jumps == 1)
-        //    {
-        //        jumpForce = jumpForce - 5;
-        //    }
-        //    //First jump (slightly weaker than the second jump)
-        //    else if (jumps == 2)
-        //    {
-        //        jumpForce = 25;
-        //    }
-
-        //    animations.SetTrigger("jump_trig");
-
-        //    playerRb.velocity = new Vector2(playerRb.velocity.x, jumpForce);
-        //    isOnGroundScript.isOnGround = false;
-
-        //    jumps -= 1;
-        //}
-
         //Player goes down faster than they go up in a regular jump and regulating animation booleans
         if (isOnGroundScript.isOnGround == true)
         {
@@ -122,28 +99,28 @@ public class PlayerControlls : MonoBehaviour
             animations.SetBool("glide_bool", false);
         }
 
-        ////Lower gravity when holding the up key in order to make the player glide
-        //if (Input.GetKey(KeyCode.UpArrow) && isOnGroundScript.isOnGround == false)
-        //{
-        //    playerRb.gravityScale = lowGravity;
-        //    animations.SetBool("glide_bool", true);
-        //}
-        ////Raise the gravity in order to make the player fall faster
-        //else if (Input.GetKey(KeyCode.DownArrow) && isOnGroundScript.isOnGround == false)
-        //{
-        //    playerRb.gravityScale = highGravity;
-        //    animations.SetBool("dive_bool", true);
-        //}
-        //else
-        //{
-        //    animations.SetBool("dive_bool", false);
-        //    animations.SetBool("glide_bool", false);
-        //}
+        //Lower gravity when holding the up key in order to make the player glide
+        if (canGlide == true && isOnGroundScript.isOnGround == false)
+        {
+            playerRb.gravityScale = lowGravity;
+            animations.SetBool("glide_bool", true);
+        }
+        //Raise the gravity in order to make the player fall faster
+        else if (canDive == true && isOnGroundScript.isOnGround == false)
+        {
+            playerRb.gravityScale = highGravity;
+            animations.SetBool("dive_bool", true);
+        }
+        else
+        {
+            animations.SetBool("dive_bool", false);
+            animations.SetBool("glide_bool", false);
+        }
 
         Collected = false;
     }
 
-    void Jump()
+    void OnJump()
     {
         //Jump when you press the space bar (this can happen twice)
         if (isOnGroundScript.isOnGround == true || jumps > 0)
@@ -168,51 +145,25 @@ public class PlayerControlls : MonoBehaviour
         }
     }
 
-    void AirManuver(InputAction.CallbackContext context)
+    void OnGlide(InputAction.CallbackContext context)
     {
-        if (context.ReadValue<float>() == 1 && isOnGroundScript.isOnGround == false)
-        {
-            playerRb.gravityScale = lowGravity;
-            animations.SetBool("glide_bool", true);
-        }
-        else if (context.ReadValue<float>() == -1 && isOnGroundScript.isOnGround == false)
-        {
-            playerRb.gravityScale = highGravity;
-            animations.SetBool("dive_bool", true);
-        }
-        else
-        {
-            animations.SetBool("dive_bool", false);
-            animations.SetBool("glide_bool", false);
-        }
+        canGlide = context.ReadValueAsButton();
     }
 
-    //void Glide()
-    //{
-    //    if (isOnGroundScript.isOnGround == false)
-    //    {
-    //        playerRb.gravityScale = lowGravity;
-    //        animations.SetBool("glide_bool", true);
-    //    }
-    //}
+    void OnDive(InputAction.CallbackContext context)
+    {
+        canDive = context.ReadValueAsButton();
+    }
 
-    //void Dive()
-    //{
-    //    if (isOnGroundScript.isOnGround == false)
-    //    {
-    //        playerRb.gravityScale = highGravity;
-    //        animations.SetBool("dive_bool", true);
-    //    }
-    //}
 
     private void OnEnable()
     {
-        controlls.KeyboardControlls.Enable();
+        controlls.GamePlayControlls.Enable();
     }
 
     private void OnDisable()
     {
-        controlls.KeyboardControlls.Disable();
+        controlls.GamePlayControlls.Disable();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

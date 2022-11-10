@@ -2,7 +2,7 @@
     "name": "GameControlls",
     "maps": [
         {
-            "name": "KeyboardControlls",
+            "name": "GamePlayControlls",
             "id": "e1ce43cc-9b58-4e58-bdfb-6611eba70aec",
             "actions": [
                 {
@@ -16,29 +16,20 @@
                 },
                 {
                     "name": "Glide",
-                    "type": "Button",
-                    "id": "b07ef39f-0aa7-4f58-a933-61aa2a2d2993",
+                    "type": "Value",
+                    "id": "285cebe9-09c3-43fc-8524-3ade163ef596",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": true
                 },
                 {
                     "name": "Dive",
-                    "type": "PassThrough",
-                    "id": "c02a83f0-cb89-4f50-8c08-d1e17107cd70",
+                    "type": "Value",
+                    "id": "983e2d61-21e6-4298-a2d3-6d988e4b41ab",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "AirManuver",
-                    "type": "Value",
-                    "id": "8969c555-c09a-4f04-9af9-8e54bc730dfd",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": true
                 }
             ],
@@ -56,7 +47,18 @@
                 },
                 {
                     "name": "",
-                    "id": "ee60ccd5-8d89-4db8-927f-2c2e6fba782a",
+                    "id": "9d5ed18e-7979-46d1-990e-aaec50c6dd70",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c66f1ed5-a7f6-4321-8be3-640320824077",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
@@ -67,7 +69,29 @@
                 },
                 {
                     "name": "",
-                    "id": "9c223f8e-3361-400f-9bf2-22aac3f58e57",
+                    "id": "1d3310f1-8d2d-4e2c-8805-17def3808757",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Glide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9e58f21f-1afa-49a0-9f27-4acd26019d1e",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Glide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55519b70-89d8-46b1-b0ec-f36444d644cc",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
@@ -77,37 +101,26 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "78349c9f-8b5f-4b93-b6fb-603085a4e986",
-                    "path": "1DAxis",
+                    "name": "",
+                    "id": "2355d6d7-6de6-4262-8838-78b3d2767044",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AirManuver",
-                    "isComposite": true,
+                    "action": "Dive",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "2ef03d0d-8e89-4210-8715-2c162260dbdf",
-                    "path": "<Keyboard>/downArrow",
+                    "name": "",
+                    "id": "20f0e2b2-8291-4a1f-9aa3-bf3319ac525b",
+                    "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AirManuver",
+                    "action": "Dive",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "f372b236-a01f-4757-bda8-c697edcbca16",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AirManuver",
-                    "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -24,7 +24,7 @@ public partial class @GameControlls : IInputActionCollection2, IDisposable
     ""name"": ""GameControlls"",
     ""maps"": [
         {
-            ""name"": ""KeyboardControlls"",
+            ""name"": ""GamePlayControlls"",
             ""id"": ""e1ce43cc-9b58-4e58-bdfb-6611eba70aec"",
             ""actions"": [
                 {
@@ -38,29 +38,20 @@ public partial class @GameControlls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Glide"",
-                    ""type"": ""Button"",
-                    ""id"": ""b07ef39f-0aa7-4f58-a933-61aa2a2d2993"",
+                    ""type"": ""Value"",
+                    ""id"": ""285cebe9-09c3-43fc-8524-3ade163ef596"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Dive"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""c02a83f0-cb89-4f50-8c08-d1e17107cd70"",
+                    ""type"": ""Value"",
+                    ""id"": ""983e2d61-21e6-4298-a2d3-6d988e4b41ab"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""AirManuver"",
-                    ""type"": ""Value"",
-                    ""id"": ""8969c555-c09a-4f04-9af9-8e54bc730dfd"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": true
                 }
             ],
@@ -78,7 +69,18 @@ public partial class @GameControlls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ee60ccd5-8d89-4db8-927f-2c2e6fba782a"",
+                    ""id"": ""9d5ed18e-7979-46d1-990e-aaec50c6dd70"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c66f1ed5-a7f6-4321-8be3-640320824077"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -89,7 +91,29 @@ public partial class @GameControlls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9c223f8e-3361-400f-9bf2-22aac3f58e57"",
+                    ""id"": ""1d3310f1-8d2d-4e2c-8805-17def3808757"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Glide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9e58f21f-1afa-49a0-9f27-4acd26019d1e"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Glide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55519b70-89d8-46b1-b0ec-f36444d644cc"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -99,49 +123,37 @@ public partial class @GameControlls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""78349c9f-8b5f-4b93-b6fb-603085a4e986"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""2355d6d7-6de6-4262-8838-78b3d2767044"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AirManuver"",
-                    ""isComposite"": true,
+                    ""action"": ""Dive"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""2ef03d0d-8e89-4210-8715-2c162260dbdf"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""name"": """",
+                    ""id"": ""20f0e2b2-8291-4a1f-9aa3-bf3319ac525b"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AirManuver"",
+                    ""action"": ""Dive"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""f372b236-a01f-4757-bda8-c697edcbca16"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AirManuver"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // KeyboardControlls
-        m_KeyboardControlls = asset.FindActionMap("KeyboardControlls", throwIfNotFound: true);
-        m_KeyboardControlls_Jump = m_KeyboardControlls.FindAction("Jump", throwIfNotFound: true);
-        m_KeyboardControlls_Glide = m_KeyboardControlls.FindAction("Glide", throwIfNotFound: true);
-        m_KeyboardControlls_Dive = m_KeyboardControlls.FindAction("Dive", throwIfNotFound: true);
-        m_KeyboardControlls_AirManuver = m_KeyboardControlls.FindAction("AirManuver", throwIfNotFound: true);
+        // GamePlayControlls
+        m_GamePlayControlls = asset.FindActionMap("GamePlayControlls", throwIfNotFound: true);
+        m_GamePlayControlls_Jump = m_GamePlayControlls.FindAction("Jump", throwIfNotFound: true);
+        m_GamePlayControlls_Glide = m_GamePlayControlls.FindAction("Glide", throwIfNotFound: true);
+        m_GamePlayControlls_Dive = m_GamePlayControlls.FindAction("Dive", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -198,44 +210,39 @@ public partial class @GameControlls : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // KeyboardControlls
-    private readonly InputActionMap m_KeyboardControlls;
-    private IKeyboardControllsActions m_KeyboardControllsActionsCallbackInterface;
-    private readonly InputAction m_KeyboardControlls_Jump;
-    private readonly InputAction m_KeyboardControlls_Glide;
-    private readonly InputAction m_KeyboardControlls_Dive;
-    private readonly InputAction m_KeyboardControlls_AirManuver;
-    public struct KeyboardControllsActions
+    // GamePlayControlls
+    private readonly InputActionMap m_GamePlayControlls;
+    private IGamePlayControllsActions m_GamePlayControllsActionsCallbackInterface;
+    private readonly InputAction m_GamePlayControlls_Jump;
+    private readonly InputAction m_GamePlayControlls_Glide;
+    private readonly InputAction m_GamePlayControlls_Dive;
+    public struct GamePlayControllsActions
     {
         private @GameControlls m_Wrapper;
-        public KeyboardControllsActions(@GameControlls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Jump => m_Wrapper.m_KeyboardControlls_Jump;
-        public InputAction @Glide => m_Wrapper.m_KeyboardControlls_Glide;
-        public InputAction @Dive => m_Wrapper.m_KeyboardControlls_Dive;
-        public InputAction @AirManuver => m_Wrapper.m_KeyboardControlls_AirManuver;
-        public InputActionMap Get() { return m_Wrapper.m_KeyboardControlls; }
+        public GamePlayControllsActions(@GameControlls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Jump => m_Wrapper.m_GamePlayControlls_Jump;
+        public InputAction @Glide => m_Wrapper.m_GamePlayControlls_Glide;
+        public InputAction @Dive => m_Wrapper.m_GamePlayControlls_Dive;
+        public InputActionMap Get() { return m_Wrapper.m_GamePlayControlls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(KeyboardControllsActions set) { return set.Get(); }
-        public void SetCallbacks(IKeyboardControllsActions instance)
+        public static implicit operator InputActionMap(GamePlayControllsActions set) { return set.Get(); }
+        public void SetCallbacks(IGamePlayControllsActions instance)
         {
-            if (m_Wrapper.m_KeyboardControllsActionsCallbackInterface != null)
+            if (m_Wrapper.m_GamePlayControllsActionsCallbackInterface != null)
             {
-                @Jump.started -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnJump;
-                @Jump.performed -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnJump;
-                @Jump.canceled -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnJump;
-                @Glide.started -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnGlide;
-                @Glide.performed -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnGlide;
-                @Glide.canceled -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnGlide;
-                @Dive.started -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnDive;
-                @Dive.performed -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnDive;
-                @Dive.canceled -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnDive;
-                @AirManuver.started -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnAirManuver;
-                @AirManuver.performed -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnAirManuver;
-                @AirManuver.canceled -= m_Wrapper.m_KeyboardControllsActionsCallbackInterface.OnAirManuver;
+                @Jump.started -= m_Wrapper.m_GamePlayControllsActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_GamePlayControllsActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_GamePlayControllsActionsCallbackInterface.OnJump;
+                @Glide.started -= m_Wrapper.m_GamePlayControllsActionsCallbackInterface.OnGlide;
+                @Glide.performed -= m_Wrapper.m_GamePlayControllsActionsCallbackInterface.OnGlide;
+                @Glide.canceled -= m_Wrapper.m_GamePlayControllsActionsCallbackInterface.OnGlide;
+                @Dive.started -= m_Wrapper.m_GamePlayControllsActionsCallbackInterface.OnDive;
+                @Dive.performed -= m_Wrapper.m_GamePlayControllsActionsCallbackInterface.OnDive;
+                @Dive.canceled -= m_Wrapper.m_GamePlayControllsActionsCallbackInterface.OnDive;
             }
-            m_Wrapper.m_KeyboardControllsActionsCallbackInterface = instance;
+            m_Wrapper.m_GamePlayControllsActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Jump.started += instance.OnJump;
@@ -247,18 +254,14 @@ public partial class @GameControlls : IInputActionCollection2, IDisposable
                 @Dive.started += instance.OnDive;
                 @Dive.performed += instance.OnDive;
                 @Dive.canceled += instance.OnDive;
-                @AirManuver.started += instance.OnAirManuver;
-                @AirManuver.performed += instance.OnAirManuver;
-                @AirManuver.canceled += instance.OnAirManuver;
             }
         }
     }
-    public KeyboardControllsActions @KeyboardControlls => new KeyboardControllsActions(this);
-    public interface IKeyboardControllsActions
+    public GamePlayControllsActions @GamePlayControlls => new GamePlayControllsActions(this);
+    public interface IGamePlayControllsActions
     {
         void OnJump(InputAction.CallbackContext context);
         void OnGlide(InputAction.CallbackContext context);
         void OnDive(InputAction.CallbackContext context);
-        void OnAirManuver(InputAction.CallbackContext context);
     }
 }

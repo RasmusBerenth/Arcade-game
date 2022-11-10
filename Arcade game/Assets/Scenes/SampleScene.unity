@@ -1542,6 +1542,8 @@ MonoBehaviour:
   lostSoulSound: {fileID: 8300000, guid: f2f1d4addfa1d9540b962936ad1ccb6d, type: 3}
   goodSoulSound: {fileID: 8300000, guid: ae2bc3f0159b4c74ebe80371d85f44ab, type: 3}
   gameOver: 0
+  canGlide: 0
+  canDive: 0
   jumpForce: 25
   highGravity: 40
   lowGravity: 1
@@ -2747,7 +2749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 137693047}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &836699060

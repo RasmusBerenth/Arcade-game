@@ -34,6 +34,7 @@ public class PlayerControlls : MonoBehaviour
     [SerializeField] private float lowGravity;
     [SerializeField] private float jumpGravity;
     [SerializeField] private float regularGravity;
+    [SerializeField] private float removedJumpForce = 5;
 
     public int score = 0;
     public int jumps = 2;
@@ -41,7 +42,7 @@ public class PlayerControlls : MonoBehaviour
     private int scorePoint;
     private int soulsCollected;
 
-    GameControlls controlls;
+    private GameControlls controlls;
 
     private void Awake()
     {
@@ -128,7 +129,7 @@ public class PlayerControlls : MonoBehaviour
             //Second jump
             if (jumps == 1)
             {
-                jumpForce = jumpForce - 5;
+                jumpForce = jumpForce - removedJumpForce;
             }
             //First jump (slightly weaker than the second jump)
             else if (jumps == 2)
@@ -183,8 +184,6 @@ public class PlayerControlls : MonoBehaviour
             bonusSpeedParticles.Stop();
 
             Destroy(gameObject);
-
-            Debug.Log("Game Over");
         }
         //Collectables are worth 1 point
         if (collision.CompareTag("Collectable"))
@@ -200,7 +199,6 @@ public class PlayerControlls : MonoBehaviour
 
                 playerSound.PlayOneShot(lostSoulSound, 0.7f);
 
-                Debug.Log($"Score: {score}, added {scorePoint}");
                 soulsCollected++;
             }
         }
@@ -216,9 +214,7 @@ public class PlayerControlls : MonoBehaviour
             goodSoulParticles.Play();
             bonusSpeedParticles.Play();
 
-            playerSound.PlayOneShot(goodSoulSound, 0.4f);
-
-            Debug.Log($"Power up is set to {hasPowerUp}");
+            playerSound.PlayOneShot(goodSoulSound, 0.6f);
         }
     }
 
@@ -230,7 +226,5 @@ public class PlayerControlls : MonoBehaviour
         hasPowerUp = false;
         bonusSpeedParticles.Stop();
         playerSpeedParticles.Play();
-
-        Debug.Log($"Powerup is now {hasPowerUp}");
     }
 }

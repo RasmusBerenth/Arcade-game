@@ -13,7 +13,7 @@ public class GameUI : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject scoreObject;
 
-    PlayerControlls playerControllsScripts;
+    private PlayerControlls playerControllsScripts;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +38,16 @@ public class GameUI : MonoBehaviour
 
         if (playerControllsScripts.gameOver == true)
         {
-            gameOverScreen.SetActive(true);
-            scoreObject.SetActive(false);
+            StartCoroutine(WaitForEnd());
         }
+    }
+
+    //Short pause while deathparticles plays until the "game over screen" apears
+    IEnumerator WaitForEnd()
+    {
+        yield return new WaitForSeconds(playerControllsScripts.deathParticles.main.duration - 1f);
+
+        gameOverScreen.SetActive(true);
+        scoreObject.SetActive(false);
     }
 }

@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class SpawnManagment : MonoBehaviour
 {
-    public GameObject[] environmentChunks;
     public GameObject[] environmentChunks1;
     public GameObject[] environmentChunks2;
     public GameObject[] environmentBonusChunks;
     public GameObject flyingEnemy;
 
-    OutOfBound outOfBoundScript;
+    private OutOfBound outOfBoundScript;
 
     [SerializeField] private float startDelay;
 
@@ -69,19 +68,16 @@ public class SpawnManagment : MonoBehaviour
         //Spawn new chunk when hitting the spawner
         if (collision.CompareTag("Respawn"))
         {
-            Debug.Log("Triggerd");
             SpawnChunks();
         }
 
         if (collision.CompareTag("Respawn1"))
         {
-            Debug.Log("Triggerd2");
             SpawnChunks1();
         }
 
         if (collision.CompareTag("RespawnB"))
         {
-            Debug.Log("Triggerd B");
             SpawnChunksB();
         }
     }

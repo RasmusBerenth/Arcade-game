@@ -14,11 +14,10 @@ public class highscore : MonoBehaviour
         highScoreText.text = "High Score: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
-
+    //Resets highscore
     public void ResetHighScore()
     {
         PlayerPrefs.DeleteKey("HighScore");
         highScoreText.text = "High Score: 0";
-
     }
 }

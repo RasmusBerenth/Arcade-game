@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class OutOfBound : MonoBehaviour
 {
-    Rigidbody2D rb;
-    PlayerControlls playerControllsScript;
+    private Rigidbody2D rb;
+    private PlayerControlls playerControllsScript;
 
-    private float lowerBorder = -20;
-    private float upperBorder = 8;
-    private float worldLeftBorder = -150;
-    private float playerLeftBorder = -23;
+    [SerializeField] private float lowerBorder = -20;
+    [SerializeField] private float upperBorder = 8;
+    [SerializeField] private float worldLeftBorder = -150;
+    [SerializeField] private float playerLeftBorder = -23;
+    [SerializeField] private float upperForce = 10;
+    [SerializeField] private float leftForce = 5;
 
     public bool toHigh = false;
 
@@ -33,7 +35,7 @@ public class OutOfBound : MonoBehaviour
         //Player can't be pushed behind the chaser
         if (CompareTag("Player") && transform.position.x < playerLeftBorder)
         {
-            rb.AddForce(Vector2.right * 5);
+            rb.AddForce(Vector2.right * leftForce);
         }
 
         //Player can't leave the screen upwards and ends the game if they go downwards
@@ -42,11 +44,10 @@ public class OutOfBound : MonoBehaviour
             toHigh = false;
             playerControllsScript.gameOver = true;
             Destroy(gameObject);
-            Debug.Log("Game Over!");
         }
         else if (transform.position.y > upperBorder)
         {
-            rb.AddForce(Vector2.down * 10);
+            rb.AddForce(Vector2.down * upperForce);
             toHigh = true;
         }
     }

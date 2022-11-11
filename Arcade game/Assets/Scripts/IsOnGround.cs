@@ -5,9 +5,9 @@ using UnityEngine;
 public class IsOnGround : MonoBehaviour
 {
     public bool isOnGround;
-    PlayerControlls playerControllsScript;
-    SpawnManagment spawnManagmentScript;
-    OutOfBound outOfBoundScript;
+    private PlayerControlls playerControllsScript;
+    private SpawnManagment spawnManagmentScript;
+    private OutOfBound outOfBoundScript;
 
     // Start is called before the first frame update
     void Start()

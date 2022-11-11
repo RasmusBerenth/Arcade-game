@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
-    PlayerControlls playerControllsScript;
+    private PlayerControlls playerControllsScript;
     public float speed;
+
+    private float firstDifficultySpike = 30;
+    private float secondDifficultySpike = 70;
 
     // Start is called before the first frame update
     void Start()
@@ -33,11 +36,11 @@ public class MoveLeft : MonoBehaviour
         else
         {
             //Sets difficulty curved
-            if (playerControllsScript.score < 30)
+            if (playerControllsScript.score < firstDifficultySpike)
             {
                 speed = 15;
             }
-            else if (playerControllsScript.score < 70)
+            else if (playerControllsScript.score < secondDifficultySpike)
             {
                 speed = 18;
             }

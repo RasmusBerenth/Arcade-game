@@ -1549,6 +1549,9 @@ MonoBehaviour:
   lowGravity: 1
   jumpGravity: 5
   regularGravity: 7
+  removedJumpForce: 5
+  powerUpTimer: 10
+  soundEffectsVolume: 0.7
   score: 0
   jumps: 2
 --- !u!114 &390116186
@@ -1563,6 +1566,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4231ef2970f88a24ebe05b9d8e52c8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lowerBorder: -20
+  upperBorder: 8
+  worldLeftBorder: -150
+  playerLeftBorder: -23
+  upperForce: 10
+  leftForce: 5
   toHigh: 0
 --- !u!82 &390116187
 AudioSource:
@@ -1814,7 +1823,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 514c678c4d708ef4aa2f72f64e924aac, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3472,6 +3481,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4231ef2970f88a24ebe05b9d8e52c8aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lowerBorder: -20
+  upperBorder: 8
+  worldLeftBorder: -150
+  playerLeftBorder: -23
+  upperForce: 10
+  leftForce: 5
   toHigh: 0
 --- !u!61 &1114721666
 BoxCollider2D:
@@ -20769,7 +20784,7 @@ ParticleSystem:
     enabled: 1
     type: 8
     angle: 8
-    length: 3
+    length: 2
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
@@ -25155,12 +25170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa8461bf7434c54b9ace3d04b16e356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environmentChunks:
-  - {fileID: 7726624667534667711, guid: c0a9b15340e3ec5438ab64ea9f1275dc, type: 3}
-  - {fileID: 5292390467394131147, guid: ed62a1e62ae87e249ab5b3dbc9e4f44c, type: 3}
-  - {fileID: 5125828412680285060, guid: a91da1e09874fb84a9056506d3c7760f, type: 3}
-  - {fileID: 7785275766924612750, guid: 2f526c16c74dfd54c938599edc7dca9b, type: 3}
-  - {fileID: 4447792984528362176, guid: 04e58cef52e9d1a4d8e217c64b6d0182, type: 3}
   environmentChunks1:
   - {fileID: 6016286985674554509, guid: 61cb38bb6fa7dd04db58c9b70ea9bd71, type: 3}
   - {fileID: 5125828412680285060, guid: a91da1e09874fb84a9056506d3c7760f, type: 3}
@@ -26443,7 +26452,7 @@ ParticleSystem:
     enabled: 1
     type: 8
     angle: 5
-    length: 3
+    length: 2
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2

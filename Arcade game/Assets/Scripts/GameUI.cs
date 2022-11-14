@@ -45,7 +45,7 @@ public class GameUI : MonoBehaviour
     //Short pause while deathparticles plays until the "game over screen" apears
     IEnumerator WaitForEnd()
     {
-        yield return new WaitForSeconds(playerControllsScripts.deathParticles.main.duration - 1f);
+        yield return new WaitForSeconds(playerControllsScripts.deathParticles.main.duration - 0.8f);
 
         gameOverScreen.SetActive(true);
         scoreObject.SetActive(false);

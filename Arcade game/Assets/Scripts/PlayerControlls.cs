@@ -34,7 +34,9 @@ public class PlayerControlls : MonoBehaviour
     [SerializeField] private float lowGravity;
     [SerializeField] private float jumpGravity;
     [SerializeField] private float regularGravity;
-    [SerializeField] private float removedJumpForce = 5;
+    [SerializeField] private float removedJumpForce = 5f;
+    [SerializeField] private float powerUpTimer = 10;
+    public float soundEffectsVolume = 0.7f;
 
     public int score = 0;
     public int jumps = 2;
@@ -197,7 +199,7 @@ public class PlayerControlls : MonoBehaviour
 
                 lostSoulParticles.Play();
 
-                playerSound.PlayOneShot(lostSoulSound, 0.7f);
+                playerSound.PlayOneShot(lostSoulSound, soundEffectsVolume);
 
                 soulsCollected++;
             }
@@ -214,7 +216,7 @@ public class PlayerControlls : MonoBehaviour
             goodSoulParticles.Play();
             bonusSpeedParticles.Play();
 
-            playerSound.PlayOneShot(goodSoulSound, 0.6f);
+            playerSound.PlayOneShot(goodSoulSound, soundEffectsVolume);
         }
     }
 
@@ -222,7 +224,7 @@ public class PlayerControlls : MonoBehaviour
     //How long the power up mode last (10 seconds) and also stops and plays the appropiate trails
     IEnumerator GoodSoulTimer()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(powerUpTimer);
         hasPowerUp = false;
         bonusSpeedParticles.Stop();
         playerSpeedParticles.Play();
